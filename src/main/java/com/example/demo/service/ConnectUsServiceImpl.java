@@ -31,6 +31,7 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 
 		if (adminDetails.isPresent()) {
 			response.setResponseMessage(constentMessage.getExistingAdminId());
+			response.setResponseCode(constentMessage.getUnsuccessResponseCode()); // updated build
 			return response;
 		}
 
