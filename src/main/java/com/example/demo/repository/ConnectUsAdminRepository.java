@@ -13,6 +13,10 @@ public interface ConnectUsAdminRepository extends JpaRepository<Admin,Long>{
 
 	@Query(value="SELECT * from admin p where p.admin_id=?1",nativeQuery=true)
 	public Optional<Admin> findbyAdminId(int adminID);
+    
+	
+	@Query(value="SELECT admin_email_id, admin_password from admin p where p.admin_email_id=?1 and p.admin_password=?2",nativeQuery=true)
+	public Admin findbyAdminDetail(String adminEmailID , String adminPassword);
 	
 
 }

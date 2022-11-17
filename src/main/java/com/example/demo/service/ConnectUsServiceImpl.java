@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,27 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 		response.setResponseCode(constentMessage.getSuccessResponseCode());
 
 		return response;
+	}
+
+	@Override
+	public Response loginCheckService(Admin admin) {
+		Response response = new Response();
+		
+		String adminEmailID = admin.getAdminEmailId();
+		String adminPassword = admin.getAdminPassword();
+		
+		Admin adminLoginDetails = connectUsAdminRepository.findbyAdminDetail(adminEmailID,adminPassword);
+		
+		
+		if (adminLoginDetails != null && adminLoginDetails.getAdminEmailId().equals(adminEmailID) && adminLoginDetails.getAdminPassword().equals(adminPassword)) {
+			response.setResponseMessage(constentMessage.getLoginSuccesful());
+			response.setResponseCode(constentMessage.getSuccessResponseCode()); // updated build
+			return response;
+		} else {
+			response.setResponseMessage(constentMessage.getLoginFailed());
+			response.setResponseCode(constentMessage.getUnsuccessResponseCode());
+			return response;
+		}
 	}
 
 }
