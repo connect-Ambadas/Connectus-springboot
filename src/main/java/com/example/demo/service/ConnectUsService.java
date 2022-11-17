@@ -10,4 +10,6 @@ public interface ConnectUsService {
 
 	 public Response createAdminDetail(Admin admin);
 
+	public Response loginCheckService(Admin admin);
+
 }

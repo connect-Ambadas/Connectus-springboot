@@ -39,6 +39,12 @@ public class ConstentMessage {
 	
 	@Value("${UNSUCCESSFUL_RESPONSECODE}")
 	public String unsuccessResponseCode;
+	
+	@Value("${LOGIN_SUCCESSFUL}")
+	public String loginSuccesful;
+	
+	@Value("${LOGIN_FAILED}")
+	public String loginFailed;
 
 	public String getAdminId() {
 		return adminId;
@@ -111,5 +117,23 @@ public class ConstentMessage {
 	public void setAdminNotCretaed(String adminNotCretaed) {
 		this.adminNotCretaed = adminNotCretaed;
 	}
+
+	public String getLoginSuccesful() {
+		return loginSuccesful;
+	}
+
+	public void setLoginSuccesful(String loginSuccesful) {
+		this.loginSuccesful = loginSuccesful;
+	}
+
+	public String getLoginFailed() {
+		return loginFailed;
+	}
+
+	public void setLoginFailed(String loginFailed) {
+		this.loginFailed = loginFailed;
+	}
+	
+	
 
 }
