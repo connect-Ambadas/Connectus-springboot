@@ -7,11 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.example.demo.repository.ConnectUsAdminRepository;
+import com.example.demo.repository.ConnectUsTransactionByWorkerRepository;
 import com.example.demo.repository.ConnectUsWorkerRepository;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.example.demo"})
-@EnableJpaRepositories(basePackageClasses = { ConnectUsAdminRepository.class , ConnectUsWorkerRepository.class})
+@EnableJpaRepositories(basePackageClasses = { ConnectUsAdminRepository.class , ConnectUsWorkerRepository.class , ConnectUsTransactionByWorkerRepository.class})
 @EntityScan("com.example.demo.model")
 public class LogintestApplication {
 

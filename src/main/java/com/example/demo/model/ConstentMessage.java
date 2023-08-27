@@ -57,6 +57,36 @@ public class ConstentMessage {
 	
 	@Value("${EXISTING_WORKER_NUMBER}")
 	public String existingWorkerId;
+	
+	@Value("${SUCCESSFUL_ADMIN_RESPONSECODE}")
+	public String successAdminResponseCode;
+	
+	@Value("${UNSUCCESSFUL_ADMIN_RESPONSECODE}")
+	public String unsuccessAdminResponseCode;
+	
+	@Value("${SUCCESSFUL_WORKER_RESPONSECODE}")
+	public String successWorkerResponseCode;
+	
+	@Value("${UNSUCCESSFUL_WORKER_RESPONSECODE}")
+	public String unsuccessWorkerResponseCode;
+	
+	@Value("${SUCCESSFUL_TRANSACTIONBYWORKER_RESPONSECODE}")
+	public String successTransactionByWorkerResponseCode;
+	
+	@Value("${UNSUCCESSFUL_TRANSACTIONBYWORKER_RESPONSECODE}")
+	public String unsuccessTransactionByWorkerResponseCode;
+	
+	@Value("${SUCCESSFUL_LOGIN_RESPONSECODE}")
+	public String successLoginResponseCode;
+	
+	@Value("${UNSUCCESSFUL_LOGIN_RESPONSECODE}")
+	public String unsuccessLoginResponseCode;
+	
+	@Value("${SUCCESSFUL_CREATION_NEW_TRANSACTIONBYWORKER}")
+	public String successfulyCreationNewTransactionByWorker;
+	
+	@Value("${UNSUCCESSFUL_CREATION_NEW_TRANSACTIONBYWORKER}")
+	public String transactionByWorkerNotCretaed;
 
 	public String getAdminId() {
 		return adminId;
@@ -176,6 +206,86 @@ public class ConstentMessage {
 
 	public void setExistingWorkerId(String existingWorkerId) {
 		this.existingWorkerId = existingWorkerId;
+	}
+
+	public String getSuccessAdminResponseCode() {
+		return successAdminResponseCode;
+	}
+
+	public void setSuccessAdminResponseCode(String successAdminResponseCode) {
+		this.successAdminResponseCode = successAdminResponseCode;
+	}
+
+	public String getUnsuccessAdminResponseCode() {
+		return unsuccessAdminResponseCode;
+	}
+
+	public void setUnsuccessAdminResponseCode(String unsuccessAdminResponseCode) {
+		this.unsuccessAdminResponseCode = unsuccessAdminResponseCode;
+	}
+
+	public String getSuccessWorkerResponseCode() {
+		return successWorkerResponseCode;
+	}
+
+	public void setSuccessWorkerResponseCode(String successWorkerResponseCode) {
+		this.successWorkerResponseCode = successWorkerResponseCode;
+	}
+
+	public String getUnsuccessWorkerResponseCode() {
+		return unsuccessWorkerResponseCode;
+	}
+
+	public void setUnsuccessWorkerResponseCode(String unsuccessWorkerResponseCode) {
+		this.unsuccessWorkerResponseCode = unsuccessWorkerResponseCode;
+	}
+
+	public String getSuccessTransactionByWorkerResponseCode() {
+		return successTransactionByWorkerResponseCode;
+	}
+
+	public void setSuccessTransactionByWorkerResponseCode(String successTransactionByWorkerResponseCode) {
+		this.successTransactionByWorkerResponseCode = successTransactionByWorkerResponseCode;
+	}
+
+	public String getUnsuccessTransactionByWorkerResponseCode() {
+		return unsuccessTransactionByWorkerResponseCode;
+	}
+
+	public void setUnsuccessTransactionByWorkerResponseCode(String unsuccessTransactionByWorkerResponseCode) {
+		this.unsuccessTransactionByWorkerResponseCode = unsuccessTransactionByWorkerResponseCode;
+	}
+
+	public String getSuccessLoginResponseCode() {
+		return successLoginResponseCode;
+	}
+
+	public void setSuccessLoginResponseCode(String successLoginResponseCode) {
+		this.successLoginResponseCode = successLoginResponseCode;
+	}
+
+	public String getUnsuccessLoginResponseCode() {
+		return unsuccessLoginResponseCode;
+	}
+
+	public void setUnsuccessLoginResponseCode(String unsuccessLoginResponseCode) {
+		this.unsuccessLoginResponseCode = unsuccessLoginResponseCode;
+	}
+
+	public String getSuccessfulyCreationNewTransactionByWorker() {
+		return successfulyCreationNewTransactionByWorker;
+	}
+
+	public void setSuccessfulyCreationNewTransactionByWorker(String successfulyCreationNewTransactionByWorker) {
+		this.successfulyCreationNewTransactionByWorker = successfulyCreationNewTransactionByWorker;
+	}
+
+	public String getTransactionByWorkerNotCretaed() {
+		return transactionByWorkerNotCretaed;
+	}
+
+	public void setTransactionByWorkerNotCretaed(String transactionByWorkerNotCretaed) {
+		this.transactionByWorkerNotCretaed = transactionByWorkerNotCretaed;
 	}
 	
 	

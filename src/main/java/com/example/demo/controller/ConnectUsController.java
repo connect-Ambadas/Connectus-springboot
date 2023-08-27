@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Admin;
 import com.example.demo.model.Response;
+import com.example.demo.model.TransactionByWorker;
 import com.example.demo.model.Worker;
 import com.example.demo.service.ConnectUsService;
 
@@ -36,5 +37,11 @@ public class ConnectUsController {
 	public Response loginCheck(@RequestBody Admin admin) {
 		
 		return connectUsService.loginCheckService(admin);
+	}
+	
+	@PostMapping(value = "/transactionByWorker")
+	public Response transactionByWorker(@RequestBody TransactionByWorker transactionByWorker ) {
+		
+		return connectUsService.createTransactionByWorker(transactionByWorker);
 	}
 }
