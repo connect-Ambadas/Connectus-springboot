@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import com.example.demo.Dao.ConnectUsDao;
 import com.example.demo.model.Admin;
 import com.example.demo.model.ConstentMessage;
 import com.example.demo.model.Response;
+import com.example.demo.model.TransactionByWorker;
 import com.example.demo.model.Worker;
 import com.example.demo.repository.ConnectUsAdminRepository;
 import com.example.demo.repository.ConnectUsWorkerRepository;
@@ -37,14 +37,14 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 
 		if (adminDetails.isPresent()) {
 			response.setResponseMessage(constentMessage.getExistingAdminId());
-			response.setResponseCode(constentMessage.getUnsuccessResponseCode()); // updated build
+			response.setResponseCode(constentMessage.getUnsuccessAdminResponseCode()); // updated build
 			return response;
 		}
 
 		connectUsDao.saveAdminAll(admin);
 
 		response.setResponseMessage(constentMessage.getSuccessfulyCretaionNewAdmin());
-		response.setResponseCode(constentMessage.getSuccessResponseCode());
+		response.setResponseCode(constentMessage.getSuccessAdminResponseCode());
 
 		return response;
 	}
@@ -57,14 +57,14 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 
 		if (workerDetails.isPresent()) {
 			response.setResponseMessage(constentMessage.getExistingWorkerId());
-			response.setResponseCode(constentMessage.getUnsuccessResponseCode()); // updated build
+			response.setResponseCode(constentMessage.getUnsuccessWorkerResponseCode()); // updated build
 			return response;
 		}
 
 		connectUsDao.saveWorkerAll(worker);
 
 		response.setResponseMessage(constentMessage.getSuccessfulyCreationNewWorker());
-		response.setResponseCode(constentMessage.getSuccessResponseCode());
+		response.setResponseCode(constentMessage.getSuccessWorkerResponseCode());
 
 		return response;
 	}
@@ -81,13 +81,26 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 		
 		if (adminLoginDetails != null && adminLoginDetails.getAdminEmailId().equals(adminEmailID) && adminLoginDetails.getAdminPassword().equals(adminPassword)) {
 			response.setResponseMessage(constentMessage.getLoginSuccesful());
-			response.setResponseCode(constentMessage.getSuccessResponseCode()); // updated build
+			response.setResponseCode(constentMessage.getSuccessLoginResponseCode()); // updated build
 			return response;
 		} else {
 			response.setResponseMessage(constentMessage.getLoginFailed());
-			response.setResponseCode(constentMessage.getUnsuccessResponseCode());
+			response.setResponseCode(constentMessage.getUnsuccessLoginResponseCode());
 			return response;
 		}
+	}
+
+	@Override
+	public Response createTransactionByWorker(TransactionByWorker transactionByWorker) {
+		Response response = new Response();
+        
+		if ( transactionByWorker != null) {
+			connectUsDao.savetransactionByWorker(transactionByWorker);
+			response.setResponseMessage(constentMessage.getSuccessfulyCreationNewTransactionByWorker());
+			response.setResponseCode(constentMessage.getSuccessTransactionByWorkerResponseCode());
+		}
+
+		return response;
 	}
 
 	
