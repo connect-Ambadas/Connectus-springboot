@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Admin;
 import com.example.demo.model.Response;
+import com.example.demo.model.Worker;
 import com.example.demo.service.ConnectUsService;
 
 @RestController
@@ -18,11 +19,19 @@ public class ConnectUsController {
 	private ConnectUsService connectUsService;
 	
 	@PostMapping(value = "/createAdmin")
-	public Response createPO(@RequestBody Admin admin) {
+	public Response createAdmin(@RequestBody Admin admin) {
 		
 		return connectUsService.createAdminDetail(admin);
 		 
 	}
+	
+	@PostMapping(value = "/createWorker")
+	public Response createWorker(@RequestBody Worker worker) {
+		
+		return connectUsService.createWorkerDetail(worker);
+		 
+	}
+	
 	@PostMapping(value = "/loginChecker")
 	public Response loginCheck(@RequestBody Admin admin) {
 		

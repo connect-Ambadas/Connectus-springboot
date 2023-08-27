@@ -23,12 +23,21 @@ public class ConstentMessage {
 	@Value("${SUCCESSFUL_CREATION_NEW_ADMIN}")
 	public String successfulyCretaionNewAdmin;
 	
+	@Value("${SUCCESSFUL_CREATION_NEW_WORKER}")
+	public String successfulyCreationNewWorker;
+	
 	
 	@Value("${UNSUCCESSFUL_CREATION_NEW_ADMIN}")
 	public String adminNotCretaed;
 	
+	@Value("${UNSUCCESSFUL_CREATION_NEW_Worker}")
+	public String workerNotCretaed;
+	
 	@Value("${SUCCESSFUL_UPDATION_EXISTING_ADMIN}")
 	public String successfulyUpdatedAdmin;
+	
+	@Value("${SUCCESSFUL_UPDATION_EXISTING_WORKER}")
+	public String successfulyUpdatedWorker;
 	
 	@Value("${INVALID_ADMIN_ID}")
 	public String invalidAdminId;
@@ -45,6 +54,9 @@ public class ConstentMessage {
 	
 	@Value("${LOGIN_FAILED}")
 	public String loginFailed;
+	
+	@Value("${EXISTING_WORKER_NUMBER}")
+	public String existingWorkerId;
 
 	public String getAdminId() {
 		return adminId;
@@ -133,6 +145,39 @@ public class ConstentMessage {
 	public void setLoginFailed(String loginFailed) {
 		this.loginFailed = loginFailed;
 	}
+
+	public String getSuccessfulyCreationNewWorker() {
+		return successfulyCreationNewWorker;
+	}
+
+	public void setSuccessfulyCreationNewWorker(String successfulyCreationNewWorker) {
+		this.successfulyCreationNewWorker = successfulyCreationNewWorker;
+	}
+
+	public String getWorkerNotCretaed() {
+		return workerNotCretaed;
+	}
+
+	public void setWorkerNotCretaed(String workerNotCretaed) {
+		this.workerNotCretaed = workerNotCretaed;
+	}
+
+	public String getSuccessfulyUpdatedWorker() {
+		return successfulyUpdatedWorker;
+	}
+
+	public void setSuccessfulyUpdatedWorker(String successfulyUpdatedWorker) {
+		this.successfulyUpdatedWorker = successfulyUpdatedWorker;
+	}
+
+	public String getExistingWorkerId() {
+		return existingWorkerId;
+	}
+
+	public void setExistingWorkerId(String existingWorkerId) {
+		this.existingWorkerId = existingWorkerId;
+	}
+	
 	
 	
 

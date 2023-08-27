@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,6 +17,9 @@ public class Admin {
 	
 	@Column(name="adminName")
 	public String adminName;
+	
+	@Column(name="adminCode")
+	public String adminCode;
 	
 	@Column(name="adminLastName")
 	public String adminLastName;
@@ -33,6 +38,18 @@ public class Admin {
 	
 	@Column(name="adminShopAddress")
 	public String adminShopAddress;
+	
+	@Column(name="role")
+	public String role;
+	
+	@Column(name="recordCreated")
+	public Date recordCreated;
+	
+	@Column(name="recordUpdated")
+	public Date recordUpdated;
+	
+	@Column(name="merchantCode")
+	public String merchantCode;
 
 	public int getAdminId() {
 		return adminId;
@@ -48,6 +65,15 @@ public class Admin {
 
 	public void setAdminName(String adminName) {
 		this.adminName = adminName;
+	}
+	
+
+	public String getAdminCode() {
+		return adminCode;
+	}
+
+	public void setAdminCode(String adminCode) {
+		this.adminCode = adminCode;
 	}
 
 	public String getAdminLastName() {
@@ -97,6 +123,39 @@ public class Admin {
 	public void setAdminShopAddress(String adminShopAddress) {
 		this.adminShopAddress = adminShopAddress;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public Date getRecordCreated() {
+		return recordCreated;
+	}
+
+	public void setRecordCreated(Date recordCreated) {
+		this.recordCreated = recordCreated;
+	}
+
+	public Date getRecordUpdated() {
+		return recordUpdated;
+	}
+
+	public void setRecordUpdated(Date recordUpdated) {
+		this.recordUpdated = recordUpdated;
+	}
+
+	public String getMerchantCode() {
+		return merchantCode;
+	}
+
+	public void setMerchantCode(String merchantCode) {
+		this.merchantCode = merchantCode;
+	}
+	
 
 	
 }
