@@ -10,7 +10,9 @@ import com.example.demo.Dao.ConnectUsDao;
 import com.example.demo.model.Admin;
 import com.example.demo.model.ConstentMessage;
 import com.example.demo.model.Response;
+import com.example.demo.model.Worker;
 import com.example.demo.repository.ConnectUsAdminRepository;
+import com.example.demo.repository.ConnectUsWorkerRepository;
 
 @Service("ConnectUsServiceImpl")
 public class ConnectUsServiceImpl implements ConnectUsService {
@@ -22,13 +24,16 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 	public ConnectUsAdminRepository connectUsAdminRepository;
 	
 	@Autowired
+	public ConnectUsWorkerRepository connectUsWorkerRepository;
+	
+	@Autowired
 	public ConstentMessage constentMessage;
 
 	@Override
 	public Response createAdminDetail(Admin admin) {
 		Response response = new Response();
-		int adminID = admin.getAdminId();
-		Optional<Admin> adminDetails = connectUsAdminRepository.findbyAdminId(adminID);
+		String adminCode = admin.getAdminCode();
+		Optional<Admin> adminDetails = connectUsAdminRepository.findbyAdminId(adminCode);
 
 		if (adminDetails.isPresent()) {
 			response.setResponseMessage(constentMessage.getExistingAdminId());
@@ -36,7 +41,7 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 			return response;
 		}
 
-		connectUsDao.saveAll(admin);
+		connectUsDao.saveAdminAll(admin);
 
 		response.setResponseMessage(constentMessage.getSuccessfulyCretaionNewAdmin());
 		response.setResponseCode(constentMessage.getSuccessResponseCode());
@@ -44,6 +49,26 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 		return response;
 	}
 
+	@Override
+	public Response createWorkerDetail(Worker worker) {
+		Response response = new Response();
+		String workerCode = worker.getWorkerCode();
+		Optional<Worker> workerDetails = connectUsWorkerRepository.findbyWorkerId(workerCode);
+
+		if (workerDetails.isPresent()) {
+			response.setResponseMessage(constentMessage.getExistingWorkerId());
+			response.setResponseCode(constentMessage.getUnsuccessResponseCode()); // updated build
+			return response;
+		}
+
+		connectUsDao.saveWorkerAll(worker);
+
+		response.setResponseMessage(constentMessage.getSuccessfulyCreationNewWorker());
+		response.setResponseCode(constentMessage.getSuccessResponseCode());
+
+		return response;
+	}
+	
 	@Override
 	public Response loginCheckService(Admin admin) {
 		Response response = new Response();
@@ -64,5 +89,7 @@ public class ConnectUsServiceImpl implements ConnectUsService {
 			return response;
 		}
 	}
+
+	
 
 }
